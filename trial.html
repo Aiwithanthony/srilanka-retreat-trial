@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sri Lanka, Revealed | YogiNomads Luxury Yoga Retreat</title>
+<meta name="description" content="A curated wellness & cultural immersion. Seven faces of Sri Lanka, revealed across 7 nights and 3 award-winning hotels. Hosted by Lina Aoun. Nov 26 – Dec 3, 2026."/>
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --cream:#FDF8F3;
+  --sand:#E8DDD4;
+  --blush:#E8C4B8;
+  --rose-gold:#C9A89A;
+  --warm-taupe:#8B7D74;
+  --deep-teal:#1A5F5E;
+  --ocean:#2A7B8C;
+  --sunset-coral:#E6A68F;
+  --lavender-mist:#D4C8D9;
+  --soft-gold:#D4B896;
+  --golden-hour:#E8B87D;
+
+  --ink:#2C2A28;
+  --serif:'Cormorant Garamond', serif;
+  --sans:'Montserrat', sans-serif;
+  --body:'Lato', sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+img,video{max-width:100%;height:auto;display:block;}
+
+html{
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+  font-size:clamp(14px,0.35vw+12px,17px);
+}
+body{
+  font-family:var(--body);
+  font-weight:300;
+  color:var(--ink);
+  background:var(--cream);
+  overflow-x:hidden;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ============ TYPOGRAPHY HELPERS ============ */
+.eyebrow{
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:0.72rem;
+  letter-spacing:0.42em;
+  text-transform:uppercase;
+  color:var(--rose-gold);
+}
+.display{
+  font-family:var(--serif);
+  font-weight:400;
+  line-height:1.02;
+  letter-spacing:0.01em;
+}
+.lede{
+  font-family:var(--sans);
+  font-weight:300;
+  color:var(--warm-taupe);
+  letter-spacing:0.02em;
+  line-height:1.75;
+}
+
+/* ============ REVEAL ANIMATION ============ */
+.reveal{
+  opacity:0;
+  transform:translateY(38px);
+  transition:opacity 1.1s cubic-bezier(.2,.7,.2,1), transform 1.1s cubic-bezier(.2,.7,.2,1);
+  will-change:opacity,transform;
+}
+.reveal.in{opacity:1;transform:none;}
+.reveal.d1{transition-delay:.12s;}
+.reveal.d2{transition-delay:.24s;}
+.reveal.d3{transition-delay:.36s;}
+.reveal.d4{transition-delay:.48s;}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+}
+
+/* ============ TOP BAR ============ */
+.announce{
+  position:fixed;top:0;left:0;width:100%;z-index:120;
+  background:linear-gradient(90deg,var(--deep-teal),var(--ocean),var(--deep-teal));
+  background-size:200% 100%;
+  animation:shimmer 6s ease-in-out infinite;
+  color:var(--cream);
+  text-align:center;
+  padding:0.6rem 1rem;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.05rem;
+  letter-spacing:0.06em;
+}
+.announce b{color:var(--soft-gold);font-style:normal;font-weight:600;}
+@keyframes shimmer{0%{background-position:-200% center;}100%{background-position:200% center;}}
+
+nav{
+  position:fixed;top:2.4rem;left:0;width:100%;z-index:110;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.35rem clamp(1.2rem,4vw,3.5rem);
+  transition:all .5s ease;
+}
+nav.scrolled{
+  top:0;
+  background:rgba(253,248,243,0.82);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 1px 30px rgba(26,95,94,0.07);
+  padding-top:1rem;padding-bottom:1rem;
+}
+.nav-logo img{height:46px;width:auto;transition:opacity .4s ease;}
+.nav-logo .logo-black{display:none;}
+nav.scrolled .nav-logo .logo-beige{display:none;}
+nav.scrolled .nav-logo .logo-black{display:block;}
+.nav-right{display:flex;align-items:center;gap:2rem;}
+.nav-link{
+  font-family:var(--sans);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(255,255,255,0.9);text-decoration:none;transition:color .3s ease;
+}
+nav.scrolled .nav-link{color:var(--warm-taupe);}
+.nav-link:hover{color:var(--soft-gold);}
+.nav-inquire{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-family:var(--sans);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;
+  color:#fff;text-decoration:none;
+  padding:0.7rem 1.4rem;border-radius:50px;
+  border:1px solid rgba(255,255,255,0.45);
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(8px);
+  transition:all .35s ease;
+}
+nav.scrolled .nav-inquire{background:var(--deep-teal);border-color:var(--deep-teal);}
+.nav-inquire:hover{transform:translateY(-2px);background:var(--ocean);border-color:var(--ocean);}
+.nav-menu-links{display:flex;align-items:center;gap:2rem;}
+@media (max-width:820px){.nav-menu-links{display:none;}}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;height:100svh;min-height:600px;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.hero-media{position:absolute;inset:0;}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;}
+.hero-media video{position:absolute;inset:0;}
+.hero-veil{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(120% 90% at 50% 20%, rgba(0,0,0,0.15) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.20) 42%, rgba(26,95,94,0.60) 100%);
+}
+.hero-inner{
+  position:relative;z-index:4;text-align:center;color:#fff;
+  padding:0 1.4rem;max-width:1100px;
+}
+.hero-eyebrow{
+  font-family:var(--sans);font-weight:300;
+  font-size:clamp(0.72rem,1.6vw,0.95rem);
+  letter-spacing:0.5em;text-transform:uppercase;
+  margin-bottom:1.6rem;opacity:0.94;
+  text-shadow:0 2px 14px rgba(0,0,0,0.4);
+}
+.hero-title{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(3.2rem,11vw,9rem);
+  line-height:0.94;letter-spacing:0.01em;
+  text-shadow:0 4px 30px rgba(0,0,0,0.35);
+}
+.hero-title .rev{
+  display:block;font-style:italic;font-weight:400;
+  color:var(--soft-gold);
+}
+.hero-meta{
+  display:flex;justify-content:center;gap:1.6rem;flex-wrap:wrap;
+  margin-top:1.8rem;
+  font-family:var(--serif);font-size:clamp(1.2rem,2.6vw,1.7rem);
+  letter-spacing:0.04em;text-shadow:0 2px 12px rgba(0,0,0,0.45);
+}
+.hero-meta span{position:relative;}
+.hero-meta span + span::before{
+  content:'·';position:absolute;left:-0.95rem;color:var(--soft-gold);
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:0.7rem;margin-top:2.6rem;
+  font-family:var(--sans);font-size:0.78rem;letter-spacing:0.24em;text-transform:uppercase;font-weight:500;
+  color:#fff;text-decoration:none;
+  padding:1.05rem 2.6rem;border-radius:50px;
+  background:var(--deep-teal);
+  box-shadow:0 14px 44px rgba(26,95,94,0.5);
+  transition:all .4s ease;
+}
+.hero-cta:hover{background:var(--ocean);transform:translateY(-3px);box-shadow:0 18px 54px rgba(26,95,94,0.6);}
+.hero-cta svg{width:15px;height:15px;transition:transform .4s ease;}
+.hero-cta:hover svg{transform:translateX(4px);}
+
+.scroll-cue{
+  position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:4;
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  color:rgba(255,255,255,0.7);
+  font-family:var(--sans);font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;
+}
+.scroll-cue .mouse{
+  width:22px;height:36px;border:1.5px solid rgba(255,255,255,0.55);border-radius:12px;position:relative;
+}
+.scroll-cue .mouse::after{
+  content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);
+  width:3px;height:7px;border-radius:2px;background:rgba(255,255,255,0.85);
+  animation:cue 1.8s ease-in-out infinite;
+}
+@keyframes cue{0%{opacity:0;transform:translate(-50%,0);}40%{opacity:1;}100%{opacity:0;transform:translate(-50%,10px);}}
+
+/* ============ SECTION SCAFFOLD ============ */
+section{position:relative;}
+section[id]{scroll-margin-top:96px;}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(1.4rem,5vw,4rem);}
+.section-pad{padding:clamp(4.5rem,9vw,8rem) 0;}
+.center{text-align:center;}
+.kicker{
+  font-family:var(--sans);font-size:0.72rem;letter-spacing:0.4em;text-transform:uppercase;
+  color:var(--rose-gold);margin-bottom:1.1rem;
+}
+.head{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(2.1rem,5vw,3.4rem);
+  line-height:1.08;color:var(--deep-teal);text-transform:uppercase;letter-spacing:0.03em;
+}
+.head em{font-style:italic;color:var(--warm-taupe);text-transform:uppercase;}
+.rule{
+  display:flex;align-items:center;justify-content:center;gap:1rem;margin:1.6rem 0;
+}
+.rule .line{height:1px;width:60px;background:var(--rose-gold);opacity:0.6;}
+.rule .dot{width:7px;height:7px;transform:rotate(45deg);background:var(--soft-gold);}
+
+/* ============ MANIFESTO ============ */
+.manifesto{background:var(--cream);}
+.manifesto .big{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(1.8rem,4.3vw,3rem);
+  line-height:1.28;color:var(--deep-teal);
+  max-width:1000px;margin:0 auto;text-align:center;letter-spacing:0.01em;
+}
+.manifesto .big b{font-style:italic;font-weight:400;color:var(--warm-taupe);}
+.manifesto .sub{
+  max-width:640px;margin:2rem auto 0;text-align:center;
+  font-family:var(--sans);font-size:1rem;font-weight:300;color:var(--warm-taupe);line-height:1.8;
+}
+
+/* ============ MARQUEE OF PROMISES ============ */
+.promise-strip{
+  background:var(--deep-teal);color:var(--cream);
+  padding:1.4rem 0;overflow:hidden;white-space:nowrap;
+  border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.promise-track{display:inline-flex;align-items:center;gap:2.6rem;animation:marquee 38s linear infinite;}
+.promise-track span{
+  font-family:var(--serif);font-style:italic;font-size:1.35rem;letter-spacing:0.03em;
+  color:rgba(253,248,243,0.92);
+}
+.promise-track .sep{color:var(--soft-gold);font-style:normal;font-size:0.7rem;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.promise-strip:hover .promise-track{animation-play-state:paused;}
+@media (prefers-reduced-motion:reduce){
+  .promise-track{animation:none;}
+  .announce{animation:none;}
+  .scroll-cue .mouse::after{animation:none;}
+}
+
+/* ============ SEVEN FACES (centerpiece) ============ */
+.faces{background:linear-gradient(180deg,var(--cream) 0%, #F6EEE6 100%);}
+.faces-head{text-align:center;max-width:820px;margin:0 auto clamp(2.5rem,5vw,4rem);}
+.faces-head .lede{margin-top:1rem;font-size:1.05rem;}
+.faces-count{
+  font-family:var(--serif);font-style:italic;color:var(--rose-gold);
+  font-size:1.1rem;margin-top:0.6rem;
+}
+.face{
+  display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(1.6rem,4vw,4rem);
+  align-items:center;
+  padding:clamp(2rem,4vw,3.4rem) 0;
+}
+.face:nth-child(even) .face-text{order:2;}
+.face:nth-child(even) .face-art{order:1;}
+.face-art{
+  position:relative;border-radius:18px;overflow:hidden;
+  box-shadow:0 30px 70px rgba(44,42,40,0.14);
+}
+.face-art img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease;}
+.face-art:hover img{transform:scale(1.04);}
+.face-num{
+  font-family:var(--serif);font-weight:300;font-style:italic;
+  font-size:clamp(3rem,7vw,5.5rem);line-height:1;color:var(--soft-gold);opacity:0.9;
+}
+.face-name{
+  font-family:var(--serif);font-weight:500;text-transform:uppercase;letter-spacing:0.04em;
+  font-size:clamp(1.5rem,3vw,2.3rem);color:var(--deep-teal);
+  margin:0.4rem 0 0.9rem;line-height:1.12;
+}
+.face-name span{color:var(--rose-gold);font-style:italic;text-transform:none;font-weight:400;}
+.face-list{list-style:none;display:flex;flex-wrap:wrap;gap:0.5rem 0.7rem;margin-top:0.4rem;}
+.face-list li{
+  font-family:var(--sans);font-size:0.78rem;color:var(--warm-taupe);
+  background:rgba(26,95,94,0.05);border:1px solid rgba(26,95,94,0.08);
+  padding:0.4rem 0.85rem;border-radius:50px;letter-spacing:0.01em;
+}
+@media (max-width:780px){
+  .face{grid-template-columns:1fr;gap:1.3rem;}
+  .face:nth-child(even) .face-text{order:2;}
+  .face:nth-child(even) .face-art{order:1;}
+}
+
+/* ============ THREE WORLDS (hotels) ============ */
+.worlds{
+  position:relative;color:#fff;
+  background:var(--deep-teal);
+  padding:clamp(4.5rem,9vw,8rem) 0;
+  overflow:hidden;
+}
+.worlds::before{
+  content:'';position:absolute;inset:0;
+  background:url('award.jpeg') center 65%/cover no-repeat;
+  opacity:0.16;
+}
+.worlds .wrap{position:relative;z-index:2;}
+.worlds-head{text-align:center;max-width:760px;margin:0 auto clamp(2.5rem,5vw,3.8rem);}
+.worlds-head .head{color:#fff;}
+.worlds-head .head em{color:var(--soft-gold);}
+.worlds-head .lede{color:rgba(253,248,243,0.82);margin-top:1rem;}
+.worlds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.world-card{
+  position:relative;border-radius:16px;overflow:hidden;height:440px;
+  box-shadow:0 24px 60px rgba(0,0,0,0.35);
+}
+.world-card img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease;}
+.world-card:hover img{transform:scale(1.07);}
+.world-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 38%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0.82) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:1.9rem;
+}
+.world-name{font-family:var(--serif);font-size:1.55rem;font-weight:500;line-height:1.15;}
+.world-award{
+  font-family:var(--sans);font-size:0.72rem;letter-spacing:0.02em;
+  color:var(--soft-gold);margin-top:0.5rem;line-height:1.5;
+}
+@media (max-width:820px){.worlds-grid{grid-template-columns:1fr;}.world-card{height:340px;}}
+
+/* ============ DISTINCT YOGA ============ */
+.yoga{background:var(--cream);text-align:center;}
+.yoga .head{color:var(--deep-teal);}
+.yoga .sub-gold{
+  font-family:var(--sans);font-size:1.1rem;font-weight:500;color:var(--soft-gold);
+  letter-spacing:0.02em;margin-top:0.8rem;
+}
+.yoga p.body{
+  font-family:var(--sans);font-size:1.02rem;font-weight:300;color:var(--warm-taupe);
+  max-width:820px;margin:1.6rem auto 0;line-height:1.8;
+}
+.yoga .emph{color:var(--deep-teal);font-weight:600;margin-top:1.2rem;}
+.yoga-strip{margin-top:clamp(2.5rem,5vw,4rem);border-radius:18px;overflow:hidden;box-shadow:0 30px 70px rgba(44,42,40,0.16);}
+.yoga-strip img{width:100%;max-height:460px;object-fit:cover;}
+
+/* ============ HOST ============ */
+.host{display:grid;grid-template-columns:1fr 1fr;background:var(--cream);}
+.host-media{position:relative;overflow:hidden;min-height:520px;}
+.host-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.host-body{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(3rem,6vw,6rem) clamp(1.6rem,5vw,4.5rem);background:#fff;
+}
+.host-body .kicker{color:var(--soft-gold);}
+.host-body .head{font-size:clamp(2rem,4vw,3rem);}
+.host-name{font-family:var(--sans);font-size:1.1rem;font-weight:500;color:var(--rose-gold);letter-spacing:0.02em;margin:0.4rem 0 1.4rem;text-transform:uppercase;}
+.host-body p{font-family:var(--sans);font-size:1rem;font-weight:300;color:var(--deep-teal);line-height:1.8;margin-bottom:1rem;}
+.host-stats{display:flex;gap:2.4rem;margin-top:1.6rem;flex-wrap:wrap;}
+.host-stat .n{font-family:var(--serif);font-size:2.6rem;font-weight:300;color:var(--deep-teal);line-height:1;}
+.host-stat .l{font-family:var(--sans);font-size:0.8rem;color:var(--warm-taupe);margin-top:0.3rem;letter-spacing:0.03em;}
+.host-ig{margin-top:2rem;}
+.host-ig a{display:inline-flex;width:42px;height:42px;border:1px solid var(--deep-teal);border-radius:50%;align-items:center;justify-content:center;color:var(--deep-teal);transition:all .3s ease;}
+.host-ig a:hover{background:var(--deep-teal);color:#fff;transform:scale(1.08);}
+@media (max-width:820px){.host{grid-template-columns:1fr;}.host-media{min-height:340px;}}
+
+/* ============ FOR WHOM ============ */
+.whom{background:linear-gradient(180deg,#F6EEE6 0%, var(--cream) 100%);text-align:center;}
+.whom-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:clamp(2.2rem,4vw,3.4rem);text-align:left;
+}
+.whom-card{
+  background:#fff;border-radius:14px;padding:1.9rem 1.6rem;
+  box-shadow:0 8px 30px rgba(44,42,40,0.06);border:1px solid rgba(139,125,116,0.08);
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+.whom-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(44,42,40,0.1);}
+.whom-card .ic{width:34px;height:34px;color:var(--deep-teal);margin-bottom:1rem;}
+.whom-card p{font-family:var(--sans);font-size:0.95rem;font-weight:300;color:var(--warm-taupe);line-height:1.7;}
+@media (max-width:820px){.whom-grid{grid-template-columns:1fr;}}
+
+/* ============ INCLUSIONS ============ */
+.incl{background:#fff;}
+.incl-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(1.6rem,4vw,3.4rem);margin-top:clamp(2.2rem,4vw,3.4rem);}
+.incl-col h3{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--deep-teal);margin-bottom:1.2rem;}
+.incl-cat{font-family:var(--sans);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rose-gold);margin:1.4rem 0 0.7rem;font-weight:600;}
+.incl-item{display:flex;gap:0.7rem;align-items:flex-start;font-family:var(--sans);font-size:0.9rem;font-weight:300;color:var(--ink);margin-bottom:0.55rem;line-height:1.5;}
+.incl-item svg{width:17px;height:17px;flex-shrink:0;margin-top:3px;stroke:var(--deep-teal);}
+.incl-not{background:var(--cream);border-radius:14px;padding:1.8rem;height:fit-content;}
+.incl-not .incl-item svg{stroke:var(--rose-gold);}
+.incl-note{font-family:var(--sans);font-size:0.82rem;font-style:italic;color:var(--warm-taupe);margin-top:1.2rem;line-height:1.6;}
+@media (max-width:820px){.incl-grid{grid-template-columns:1fr;}}
+
+/* ============ PRICING ============ */
+.pricing{background:linear-gradient(180deg,var(--cream) 0%, #F1E7DD 100%);}
+.price-card{
+  max-width:680px;margin:clamp(2.2rem,4vw,3rem) auto 0;background:#fff;border-radius:22px;overflow:hidden;
+  box-shadow:0 34px 90px rgba(44,42,40,0.16);
+}
+.price-img{position:relative;height:230px;}
+.price-img img{width:100%;height:100%;object-fit:cover;}
+.price-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(26,95,94,0.55) 100%);}
+.price-body{padding:clamp(1.8rem,4vw,2.8rem);text-align:center;}
+.price-amt{font-family:var(--serif);font-size:3.4rem;font-weight:400;color:var(--deep-teal);line-height:1;}
+.price-amt sup{font-size:1.2rem;color:var(--warm-taupe);vertical-align:super;letter-spacing:0.1em;}
+.price-ctas{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.8rem;}
+.price-box{
+  display:block;text-decoration:none;text-align:left;padding:1.3rem 1.4rem;border-radius:14px;transition:all .35s ease;
+}
+.price-box.primary{background:var(--deep-teal);color:#fff;box-shadow:0 12px 34px rgba(26,95,94,0.35);}
+.price-box.primary:hover{background:var(--ocean);transform:translateY(-3px);}
+.price-box.secondary{background:var(--cream);color:var(--deep-teal);border:1px solid var(--sand);}
+.price-box.secondary:hover{border-color:var(--deep-teal);transform:translateY(-3px);}
+.price-box .lab{font-family:var(--sans);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.8;}
+.price-box .ti{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin:0.5rem 0 0.25rem;}
+.price-box .st{font-family:var(--sans);font-size:0.76rem;font-weight:300;opacity:0.85;line-height:1.4;}
+.price-foot{margin-top:1.6rem;font-family:var(--sans);font-size:0.82rem;color:var(--warm-taupe);line-height:1.7;}
+@media (max-width:600px){.price-ctas{grid-template-columns:1fr;}}
+
+/* ============ PERSONALISE TEASER ============ */
+.personalise{background:var(--deep-teal);color:var(--cream);text-align:center;}
+.personalise .head{color:#fff;}
+.personalise .head em{color:var(--soft-gold);}
+.personalise p{font-family:var(--sans);font-size:1.02rem;font-weight:300;color:rgba(253,248,243,0.85);max-width:680px;margin:1.2rem auto 0;line-height:1.8;}
+.pers-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:0.7rem;margin-top:2rem;}
+.pers-tags span{font-family:var(--sans);font-size:0.78rem;letter-spacing:0.02em;color:var(--cream);border:1px solid rgba(253,248,243,0.28);padding:0.55rem 1.1rem;border-radius:50px;}
+.pers-btn{
+  display:inline-flex;align-items:center;gap:0.6rem;margin-top:2.4rem;
+  font-family:var(--sans);font-size:0.76rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;
+  color:var(--deep-teal);background:var(--soft-gold);text-decoration:none;
+  padding:1rem 2.4rem;border-radius:50px;transition:all .35s ease;
+}
+.pers-btn:hover{background:#fff;transform:translateY(-3px);}
+
+/* ============ FAQ ============ */
+.faq{background:var(--cream);}
+.faq-list{max-width:840px;margin:clamp(2.2rem,4vw,3rem) auto 0;}
+.faq-item{border-bottom:1px solid var(--sand);}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.5rem 0.2rem;
+  font-family:var(--serif);font-size:1.25rem;font-weight:500;color:var(--deep-teal);
+}
+.faq-q svg{width:20px;height:20px;flex-shrink:0;stroke:var(--rose-gold);transition:transform .35s ease;}
+.faq-item.open .faq-q svg{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.faq-a p{font-family:var(--sans);font-size:0.95rem;font-weight:300;color:var(--warm-taupe);line-height:1.75;padding:0 0.2rem 1.5rem;}
+.faq-a a{color:var(--deep-teal);font-weight:600;}
+
+/* ============ FINAL CTA ============ */
+.final{position:relative;overflow:hidden;text-align:center;color:#fff;padding:clamp(5rem,12vw,10rem) 0;}
+.final::before{content:'';position:absolute;inset:0;background:url('group.jpeg') center/cover no-repeat;}
+.final::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,95,94,0.72),rgba(0,0,0,0.55));}
+.final .wrap{position:relative;z-index:2;}
+.final .head{color:#fff;font-size:clamp(2.2rem,5.5vw,3.8rem);}
+.final .head .g{color:var(--soft-gold);font-style:italic;}
+.final-btn{
+  display:inline-flex;align-items:center;gap:0.7rem;margin-top:2.2rem;
+  font-family:var(--sans);font-size:0.78rem;letter-spacing:0.24em;text-transform:uppercase;font-weight:500;
+  color:#fff;background:var(--deep-teal);text-decoration:none;
+  padding:1.1rem 2.8rem;border-radius:50px;box-shadow:0 14px 44px rgba(26,95,94,0.5);transition:all .4s ease;
+}
+.final-btn:hover{background:var(--ocean);transform:translateY(-3px);}
+.final-sub{margin-top:1.6rem;font-family:var(--sans);font-size:0.95rem;color:rgba(255,255,255,0.85);}
+.final-sub a{color:#fff;text-decoration:underline;}
+
+/* ============ FOOTER ============ */
+footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4rem;text-align:center;}
+.footer-logo img{height:52px;width:auto;margin:0 auto 1.4rem;filter:brightness(0) invert(1);opacity:0.9;}
+.footer-social{display:flex;justify-content:center;gap:1rem;margin:1.4rem 0;}
+.footer-social a{display:inline-flex;width:40px;height:40px;border:1px solid rgba(253,248,243,0.3);border-radius:50%;align-items:center;justify-content:center;color:var(--cream);transition:all .3s ease;}
+.footer-social a:hover{background:var(--soft-gold);color:var(--deep-teal);border-color:var(--soft-gold);}
+.footer-note{font-family:var(--sans);font-size:0.78rem;letter-spacing:0.02em;line-height:1.7;}
+.footer-note a{color:var(--soft-gold);text-decoration:none;}
+
+/* ============ BACK TO TOP ============ */
+.to-top{
+  position:fixed;bottom:1.6rem;right:1.6rem;z-index:90;
+  width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;
+  background:var(--deep-teal);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(26,95,94,0.4);
+  opacity:0;pointer-events:none;transform:translateY(12px);transition:all .35s ease;
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:none;}
+.to-top:hover{background:var(--ocean);transform:translateY(-2px);}
+
+/* ============ MOBILE REFINEMENTS ============ */
+@media (max-width:640px){
+  .announce{font-size:0.82rem;letter-spacing:0.03em;padding:0.55rem 0.9rem;line-height:1.4;}
+  nav{top:2.9rem;padding-left:1.1rem;padding-right:1.1rem;}
+  .nav-logo img{height:38px;}
+  .hero-eyebrow{letter-spacing:0.32em;}
+  .hero-meta{gap:0.5rem;flex-direction:column;}
+  .hero-meta span + span::before{display:none;}
+  .promise-track span{font-size:1.1rem;}
+  .face-list li{font-size:0.72rem;padding:0.35rem 0.7rem;}
+  .host-stats{gap:1.6rem;}
+  .price-amt{font-size:2.8rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- Announcement -->
+<div class="announce">Complete full payment upon booking &amp; <b>unlock the Exclusive Privileges</b></div>
+
+<!-- Nav -->
+<nav id="nav">
+  <a href="#top" class="nav-logo">
+    <img src="Beige-and-Blue.png" alt="YogiNomads" class="logo-beige"/>
+    <img src="Black-and-Blue.png" alt="YogiNomads" class="logo-black"/>
+  </a>
+  <div class="nav-right">
+    <div class="nav-menu-links">
+      <a href="#faces" class="nav-link">The Journey</a>
+      <a href="#worlds" class="nav-link">The Hotels</a>
+      <a href="#host" class="nav-link">Your Host</a>
+      <a href="#pricing" class="nav-link">Reserve</a>
+    </div>
+    <a href="https://wa.me/9613543547" target="_blank" rel="noopener" class="nav-inquire">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
+      Inquire
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-media">
+    <img src="island.jpeg" alt="Sri Lanka aerial view" fetchpriority="high"/>
+    <video autoplay muted loop playsinline preload="auto" poster="0717-poster.jpg" class="hero-video">
+      <source src="0717.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-veil"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">A Curated Wellness &amp; Cultural Immersion</p>
+    <h1 class="hero-title">Sri Lanka<span class="rev">Revealed</span></h1>
+    <div class="hero-meta">
+      <span>Luxury Yoga Retreat</span>
+      <span>Nov 26 &ndash; Dec 3, 2026</span>
+    </div>
+    <a href="#faces" class="hero-cta">Reveal Sri Lanka to me
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="scroll-cue"><span class="mouse"></span>Scroll</div>
+</header>
+
+<!-- MANIFESTO -->
+<section class="manifesto section-pad">
+  <div class="wrap">
+    <p class="big reveal">Few places reveal so much in one journey. From ancient kingdoms &amp; misty tea hills to Ayurveda, luxury hotels &amp; the Indian Ocean, <b>Sri Lanka unfolds one unforgettable experience after another.</b></p>
+    <p class="sub reveal d1">Yoga is the thread that connects them all &mdash; a retreat refined through 160+ Yogi Nomads journeys, personally hosted by Lina Aoun.</p>
+  </div>
+</section>
+
+<!-- PROMISE MARQUEE -->
+<div class="promise-strip" aria-hidden="true">
+  <div class="promise-track">
+    <span>Founder-led East-meets-West Yoga</span><span class="sep">✦</span>
+    <span>3 award-winning hotels</span><span class="sep">✦</span>
+    <span>Ayurveda beyond treatments</span><span class="sep">✦</span>
+    <span>Seamless logistics</span><span class="sep">✦</span>
+    <span>A group that feels easy</span><span class="sep">✦</span>
+    <span>Authentic, without compromise</span><span class="sep">✦</span>
+    <!-- duplicate for seamless loop -->
+    <span>Founder-led East-meets-West Yoga</span><span class="sep">✦</span>
+    <span>3 award-winning hotels</span><span class="sep">✦</span>
+    <span>Ayurveda beyond treatments</span><span class="sep">✦</span>
+    <span>Seamless logistics</span><span class="sep">✦</span>
+    <span>A group that feels easy</span><span class="sep">✦</span>
+    <span>Authentic, without compromise</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- SEVEN FACES -->
+<section class="faces section-pad" id="faces">
+  <div class="wrap">
+    <div class="faces-head reveal">
+      <p class="kicker">The Experience</p>
+      <h2 class="head">Seven Faces of <em>Sri Lanka</em></h2>
+      <p class="faces-count">Each chapter reveals a completely new face of the island</p>
+      <p class="lede">Every stop has been carefully chosen for its character, its people, and the story it tells. Yoga is the thread that connects them all.</p>
+    </div>
+
+    <!-- Face 1 -->
+    <article class="face">
+      <div class="face-text reveal">
+        <div class="face-num">01</div>
+        <h3 class="face-name">Ancient <span>Revealed</span></h3>
+        <ul class="face-list">
+          <li>Sunrise Sigiriya climb*</li><li>Royal Botanical Gardens</li><li>Sacred temple rituals</li><li>Kandyan dance</li><li>Ancient kingdoms</li><li>Lotus boat journey</li>
+        </ul>
+      </div>
+      <div class="face-art reveal d1"><img src="b1.png" alt="Ancient Sri Lanka Revealed" loading="lazy"/></div>
+    </article>
+
+    <!-- Face 2 -->
+    <article class="face">
+      <div class="face-text reveal">
+        <div class="face-num">02</div>
+        <h3 class="face-name">People &amp; Local Life <span>Revealed</span></h3>
+        <ul class="face-list">
+          <li>Traditional village experience</li><li>Cooking with locals</li><li>Pottery traditions</li><li>Handmade paper artistry</li><li>Ella&rsquo;s cafés</li><li>Galle Fort strolls</li>
+        </ul>
+      </div>
+      <div class="face-art reveal d1"><img src="b2.png" alt="People and Local Life Revealed" loading="lazy"/></div>
+    </article>
+
+    <!-- Face 3 -->
+    <article class="face">
+      <div class="face-text reveal">
+        <div class="face-num">03</div>
+        <h3 class="face-name">Ayurveda <span>Revealed</span></h3>
+        <ul class="face-list">
+          <li>Meet the Ayurvedic Doctor</li><li>Personal Dosha consultation</li><li>Lifestyle &amp; nutrition</li><li>Healing oil therapies</li><li>Signature treatments</li>
+        </ul>
+      </div>
+      <div class="face-art reveal d1"><img src="b3.png" alt="Ayurveda Revealed" loading="lazy"/></div>
+    </article>
+
+    <!-- Face 4 -->
+    <article class="face">
+      <div class="face-text reveal">
+        <div class="face-num">04</div>
+        <h3 class="face-name">Tea Country &amp; Colonial <span>Revealed</span></h3>
+        <ul class="face-list">
+          <li>Tea plucking experience*</li><li>Ceylon tea tasting</li><li>Colonial heritage</li><li>Elegant highland towns</li><li>The Misty Highlands</li>
+        </ul>
+      </div>
+      <div class="face-art reveal d1"><img src="b4.png" alt="Tea Country and Colonial Revealed" loading="lazy"/></div>
+    </article>
+
+    <!-- Face 5 -->
+    <article class="face">
+      <div class="face-text reveal">
+        <div class="face-num">05</div>
+        <h3 class="face-name">Wild <span>Revealed</span></h3>
+        <ul class="face-list">
+          <li>Jungle immersion resort living</li><li>Minneriya wild elephants*</li><li>Yala Safari*</li>
+        </ul>
+      </div>
+      <div class="face-art reveal d1"><img src="b5.png" alt="Wild Sri Lanka Revealed" loading="lazy"/></div>
+    </article>
+
+    <!-- Face 6 -->
+    <article class="face">
+      <div class="face-text reveal">
+        <div class="face-num">06</div>
+        <h3 class="face-name">The Southern Coast <span>Revealed</span></h3>
+        <ul class="face-list">
+          <li>Golden beaches &amp; turquoise waters</li><li>Ocean adventures</li><li>Slow coastal afternoons</li><li>Star-lit cinema</li><li>Hiriketiya Beach Night</li>
+        </ul>
+      </div>
+      <div class="face-art reveal d1"><img src="b6.png" alt="The Southern Coast Revealed" loading="lazy"/></div>
+    </article>
+
+    <!-- Face 7 -->
+    <article class="face">
+      <div class="face-text reveal">
+        <div class="face-num">07</div>
+        <h3 class="face-name">Spiritual <span>Revealed</span></h3>
+        <ul class="face-list">
+          <li>Temple meditation &amp; sound bath</li><li>Conversation with a Buddhist monk</li><li>Buddhist philosophy</li><li>Guided labyrinth meditation</li><li>Silent lagoon boat journey</li>
+        </ul>
+      </div>
+      <div class="face-art reveal d1"><img src="b7.png" alt="Spiritual Sri Lanka Revealed" loading="lazy"/></div>
+    </article>
+  </div>
+</section>
+
+<!-- THREE WORLDS -->
+<section class="worlds" id="worlds">
+  <div class="wrap">
+    <div class="worlds-head reveal">
+      <p class="kicker" style="color:var(--soft-gold);">Your Sanctuary · Curated 5★ Hospitality</p>
+      <h2 class="head">Award-Winning Hotels That <em>Define the Journey</em></h2>
+      <p class="lede">Three exceptional hotels, each revealing a different face of Sri Lanka &mdash; from jungle serenity and colonial elegance to oceanfront luxury.</p>
+    </div>
+    <div class="worlds-grid">
+      <div class="world-card reveal">
+        <img src="AnantaraPeaceHaven.jpeg" alt="Anantara Peace Haven" loading="lazy"/>
+        <div class="world-overlay">
+          <div class="world-name">Anantara Peace Haven</div>
+          <div class="world-award">Sri Lanka&rsquo;s Leading Luxury Resort — World Travel Awards</div>
+        </div>
+      </div>
+      <div class="world-card reveal d1">
+        <img src="grandgotelnuwara.jpeg" alt="Grand Hotel Nuwara Eliya" loading="lazy"/>
+        <div class="world-overlay">
+          <div class="world-name">Grand Hotel Nuwara Eliya</div>
+          <div class="world-award">CNN Travel — Asia&rsquo;s Ultimate Heritage Hotel</div>
+        </div>
+      </div>
+      <div class="world-card reveal d2">
+        <img src="AliyaResortSpa.jpeg" alt="Aliya Resort & Spa" loading="lazy"/>
+        <div class="world-overlay">
+          <div class="world-name">Aliya Resort &amp; Spa</div>
+          <div class="world-award">Condé Nast Traveler Nomination</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISTINCT YOGA -->
+<section class="yoga section-pad">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker">A Distinct Yoga · West Meets East</p>
+      <h2 class="head">Two Perspectives. <em>One Deeper Practice.</em></h2>
+      <p class="sub-gold">Move through Yogi Nomads&rsquo; signature contemporary yoga.</p>
+      <p class="body">Discover Sri Lanka&rsquo;s living traditions through meditation, Buddhist philosophy and local teachers — yoga woven into life, not just onto the mat.</p>
+      <p class="body emph">Welcoming to every level. No experience required.</p>
+    </div>
+    <div class="yoga-strip reveal d1"><img src="IMG_0078.JPG" alt="Yoga practice on the beach" loading="lazy"/></div>
+  </div>
+</section>
+
+<!-- HOST -->
+<section class="host" id="host">
+  <div class="host-media reveal"><img src="meethost.jpeg" alt="Lina Aoun, your retreat host"/></div>
+  <div class="host-body reveal d1">
+    <p class="kicker">Meet Your Host</p>
+    <h2 class="head">Lina Aoun</h2>
+    <p class="host-name">Founder of Yogi Nomads</p>
+    <p>Lina has hosted over 150 retreats, welcoming thousands of guests into experiences that blend yoga, travel &amp; curated community. Her approach is modern, grounded, and music-driven — designed to feel intelligent, embodied, and accessible.</p>
+    <p>Each Yogi Nomads retreat is personally led and thoughtfully crafted to feel seamless, warm, and deeply human.</p>
+    <div class="host-stats">
+      <div class="host-stat"><div class="n">8,000+</div><div class="l">Hours Teaching</div></div>
+      <div class="host-stat"><div class="n">150+</div><div class="l">Retreats Hosted</div></div>
+      <div class="host-stat"><div class="n">10+</div><div class="l">Years Experience</div></div>
+    </div>
+    <div class="host-ig">
+      <a href="https://www.instagram.com/fromyogatolina/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="whom section-pad">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker">Who This</p>
+      <h2 class="head">Journey Is <em>For</em></h2>
+      <div class="rule"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+      <p class="lede" style="max-width:760px;margin:0 auto;">Thoughtfully designed from beginning to end — every destination, stay and experience chosen with purpose. The result feels warm, personal and unlike any other.</p>
+    </div>
+    <div class="whom-grid">
+      <div class="whom-card reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20a8 8 0 0 1 16 0"/><path d="M12 4v3M6 7l2 2M18 7l-2 2"/></svg><p>You want to experience the real Sri Lanka &mdash; beautifully, not hurriedly.</p></div>
+      <div class="whom-card reveal d1"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 21h14M9 21c0-6 1-9 3-9s3 3 3 9"/><path d="M12 12V6M10 8h4"/></svg><p>You value authentic places over crowded tourist stops.</p></div>
+      <div class="whom-card reveal d2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="6" width="16" height="4" rx="1"/><path d="M5 10l2 8h10l2-8"/></svg><p>You appreciate exceptional stays with character, soul and a sense of place.</p></div>
+      <div class="whom-card reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 4c-3 6-3 11 0 15 3-4 3-9 0-15z"/><path d="M12 19c-5-3-8-7-9-11 4 1 7 5 9 11z"/><path d="M12 19c5-3 8-7 9-11-4 1-7 5-9 11z"/></svg><p>You believe yoga belongs in life &mdash; not just on the mat.</p></div>
+      <div class="whom-card reveal d1"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 20h18M5 20l5-9 4 5 2-2 3 6"/></svg><p>You want Sri Lanka in all its faces &mdash; from ancient kingdoms and tea hills to wildlife, coastline and culture.</p></div>
+      <div class="whom-card reveal d2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="7" cy="9" r="2.4"/><circle cx="17" cy="9" r="2.4"/><circle cx="12" cy="11" r="2.8"/><path d="M8 20c0-4 2-5 4-5s4 1 4 5"/></svg><p>You seek genuine human connection and unforgettable shared moments.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUSIONS -->
+<section class="incl section-pad">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="kicker">Your Investment</p>
+      <h2 class="head">Included in <em>Your Journey</em></h2>
+    </div>
+    <div class="incl-grid">
+      <div class="incl-col reveal">
+        <p class="incl-cat">Luxury Accommodation</p>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>7 nights across 3 handpicked award-winning hotels</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Daily breakfast</div>
+        <p class="incl-cat">Yoga, Meditation &amp; Wellbeing</p>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Daily signature yoga experiences</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Meditation in a sacred temple</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Private encounter &amp; Buddhist philosophy discussion with a resident monk</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Guided labyrinth meditation &amp; silent lagoon boat experience</div>
+        <p class="incl-cat">Ayurveda Revealed</p>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Ayurveda Immersion Workshops</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Personal Dosha &amp; Doctor Consultation</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Herbal Dispensary Experience &amp; Ayurvedic Signature Treatment</div>
+        <p class="incl-cat">Signature Sri Lankan Experiences</p>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Traditional village experience &amp; cooking with local families</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Pottery &amp; paper workshops, lotus boat journey, Kandyan dance</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Tea plucking &amp; factory tour*, Ella, Galle &amp; Hiriketiya explorations</div>
+        <p class="incl-cat">Transfers &amp; Access</p>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>All entrance fees to cultural sites (excluding optional activities)</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Private airport transfers (when flights booked with Yogi Nomads) &amp; all ground transportation</div>
+      </div>
+      <div class="incl-not reveal d1">
+        <h3>Not Included</h3>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>International flights</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Visas &amp; Travel insurance</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Optional Excursions*</div>
+        <div class="incl-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Personal expenses</div>
+        <p class="incl-note">Flight arrangements secured by Yogi Nomads ensuring a smooth journey &amp; appropriate transfers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing section-pad" id="pricing">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="kicker">Reserve Your Journey</p>
+      <h2 class="head">Beyond Yoga. <em>Beyond Travel.</em></h2>
+    </div>
+    <div class="price-card reveal d1">
+      <div class="price-img"><img src="reserveyourjourney.jpeg" alt="Sri Lanka retreat"/></div>
+      <div class="price-body">
+        <div class="price-amt">$2,285 <sup>USD</sup></div>
+        <div class="price-ctas">
+          <a href="https://yoginomads.eu/cart/51493884985627:1?checkout" class="price-box primary">
+            <div class="lab">Recommended</div>
+            <div class="ti">Pay in Full</div>
+            <div class="st">Unlock the Exclusive Privileges</div>
+          </a>
+          <a href="https://yoginomads.eu/cart/51493883937051:1?checkout" class="price-box secondary">
+            <div class="lab">Secure Your Spot</div>
+            <div class="ti">Reserve with 30%</div>
+            <div class="st">Balance due 60 days before retreat</div>
+          </a>
+        </div>
+        <div class="price-foot">
+          Rate on shared room basis (2 persons / room). Single options available.<br>
+          Solo travelers welcome — we&rsquo;ll pair you with a roommate when possible.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONALISE TEASER -->
+<section class="personalise section-pad">
+  <div class="wrap reveal">
+    <p class="kicker" style="color:var(--soft-gold);">Make It Yours</p>
+    <h2 class="head">Personalize Your <em>Retreat</em></h2>
+    <p>Every guest can tailor their journey before arrival — from wellness treatments and Ayurvedic rituals to ocean adventures, safaris and accommodation upgrades. Select the experiences that suit you best.</p>
+    <div class="pers-tags">
+      <span>Single Occupancy</span><span>Ayurvedic Spa Rituals</span><span>Surf the Indian Ocean</span><span>Whale Watching</span><span>Yala Safari</span><span>Sunrise Sigiriya</span><span>Private Yoga</span>
+    </div>
+    <a href="personalise-retreat.html" class="pers-btn">Explore Personalization
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq section-pad" id="faq">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="kicker">Questions?</p>
+      <h2 class="head">Good to <em>Know</em></h2>
+    </div>
+    <div class="faq-list reveal d1">
+      <div class="faq-item">
+        <button class="faq-q">Can I tailor my retreat to my preferences?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Yes. Every guest can personalize their journey before arrival. From wellness treatments and optional excursions to dining and accommodation upgrades, you&rsquo;ll be able to select the experiences that suit you best. → <a href="personalise-retreat.html">Explore your personalization options</a></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is this suitable for complete beginners or non-yogis?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Yes. All sessions are adaptable and accessible.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is it suitable for advanced practitioners?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Yes. Variations and depth are always offered.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I join alone?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Absolutely. Many guests do and feel at ease quickly.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is travel insurance required?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Yes. Travel insurance is mandatory.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will you share a detailed daily program?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Yes. A detailed flow will be shared to confirmed participants closer to the retreat date.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap reveal">
+    <h2 class="head">This is Sri Lanka, <span class="g">Revealed.</span></h2>
+    <a href="#pricing" class="final-btn">Reserve Your Place</a>
+    <p class="final-sub">Have questions before booking? <a href="https://wa.me/9613543547" target="_blank" rel="noopener">Chat with Lina</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><img src="Beige-and-Blue.png" alt="YogiNomads"/></div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/yogi.nomads/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg></a>
+    <a href="https://wa.me/9613543547" target="_blank" rel="noopener" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg></a>
+    <a href="mailto:life@yoginomads.eu" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg></a>
+  </div>
+  <p class="footer-note">A Curated Wellness &amp; Cultural Immersion · Sri Lanka · Nov 26 – Dec 3, 2026<br>
+  <a href="mailto:life@yoginomads.eu">life@yoginomads.eu</a> &nbsp;·&nbsp; <a href="https://wa.me/9613543547">WhatsApp</a></p>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script>
+// Nav scroll state
+const nav = document.getElementById('nav');
+const toTop = document.getElementById('toTop');
+function onScroll(){
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 60);
+  toTop.classList.toggle('show', y > 700);
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.16, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', ()=>{
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!open){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+  });
+});
+
+// Back to top
+toTop.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
