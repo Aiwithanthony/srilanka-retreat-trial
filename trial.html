@@ -289,8 +289,11 @@ section[id]{scroll-margin-top:96px;}
   align-items:center;
   padding:clamp(2rem,4vw,3.4rem) 0;
 }
-.face:nth-child(even) .face-text{order:2;}
-.face:nth-child(even) .face-art{order:1;}
+/* Desktop only: alternate which side the image sits on (zig-zag) */
+@media (min-width:781px){
+  .face:nth-child(even) .face-text{order:2;}
+  .face:nth-child(even) .face-art{order:1;}
+}
 .face-art{
   position:relative;border-radius:18px;overflow:hidden;
   aspect-ratio:16/10;
