@@ -293,6 +293,7 @@ section[id]{scroll-margin-top:96px;}
 .face:nth-child(even) .face-art{order:1;}
 .face-art{
   position:relative;border-radius:18px;overflow:hidden;
+  aspect-ratio:16/10;
   box-shadow:0 30px 70px rgba(44,42,40,0.14);
 }
 .face-art img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease;}
@@ -315,8 +316,9 @@ section[id]{scroll-margin-top:96px;}
 }
 @media (max-width:780px){
   .face{grid-template-columns:1fr;gap:1.3rem;}
-  .face:nth-child(even) .face-text{order:2;}
-  .face:nth-child(even) .face-art{order:1;}
+  /* On mobile the image always sits UNDER the text + bubbles, for every face */
+  .face .face-text{order:1;}
+  .face .face-art{order:2;}
 }
 
 /* ============ THREE WORLDS (hotels) ============ */
@@ -621,7 +623,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
           <li>Sunrise Sigiriya climb*</li><li>Royal Botanical Gardens</li><li>Sacred temple rituals</li><li>Kandyan dance</li><li>Ancient kingdoms</li><li>Lotus boat journey</li>
         </ul>
       </div>
-      <div class="face-art reveal d1"><img src="b1.png" alt="Ancient Sri Lanka Revealed" loading="lazy"/></div>
+      <div class="face-art reveal d1"><img src="seperator.jpeg" alt="Ancient Sri Lanka Revealed" loading="lazy"/></div>
     </article>
 
     <!-- Face 2 -->
@@ -633,7 +635,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
           <li>Traditional village experience</li><li>Cooking with locals</li><li>Pottery traditions</li><li>Handmade paper artistry</li><li>Ella&rsquo;s cafés</li><li>Galle Fort strolls</li>
         </ul>
       </div>
-      <div class="face-art reveal d1"><img src="b2.png" alt="People and Local Life Revealed" loading="lazy"/></div>
+      <div class="face-art reveal d1"><img src="People.jpg" alt="People and Local Life Revealed" loading="lazy"/></div>
     </article>
 
     <!-- Face 3 -->
@@ -645,7 +647,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
           <li>Meet the Ayurvedic Doctor</li><li>Personal Dosha consultation</li><li>Lifestyle &amp; nutrition</li><li>Healing oil therapies</li><li>Signature treatments</li>
         </ul>
       </div>
-      <div class="face-art reveal d1"><img src="b3.png" alt="Ayurveda Revealed" loading="lazy"/></div>
+      <div class="face-art reveal d1"><img src="Ayurveda.jpg" alt="Ayurveda Revealed" loading="lazy"/></div>
     </article>
 
     <!-- Face 4 -->
@@ -657,7 +659,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
           <li>Tea plucking experience*</li><li>Ceylon tea tasting</li><li>Colonial heritage</li><li>Elegant highland towns</li><li>The Misty Highlands</li>
         </ul>
       </div>
-      <div class="face-art reveal d1"><img src="b4.png" alt="Tea Country and Colonial Revealed" loading="lazy"/></div>
+      <div class="face-art reveal d1"><img src="Tea.jpg" alt="Tea Country and Colonial Revealed" loading="lazy"/></div>
     </article>
 
     <!-- Face 5 -->
@@ -669,7 +671,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
           <li>Jungle immersion resort living</li><li>Minneriya wild elephants*</li><li>Yala Safari*</li>
         </ul>
       </div>
-      <div class="face-art reveal d1"><img src="b5.png" alt="Wild Sri Lanka Revealed" loading="lazy"/></div>
+      <div class="face-art reveal d1"><img src="Wild.jpg" alt="Wild Sri Lanka Revealed" loading="lazy"/></div>
     </article>
 
     <!-- Face 6 -->
@@ -681,7 +683,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
           <li>Golden beaches &amp; turquoise waters</li><li>Ocean adventures</li><li>Slow coastal afternoons</li><li>Star-lit cinema</li><li>Hiriketiya Beach Night</li>
         </ul>
       </div>
-      <div class="face-art reveal d1"><img src="b6.png" alt="The Southern Coast Revealed" loading="lazy"/></div>
+      <div class="face-art reveal d1"><img src="Southern.jpg" alt="The Southern Coast Revealed" loading="lazy"/></div>
     </article>
 
     <!-- Face 7 -->
@@ -693,7 +695,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
           <li>Temple meditation &amp; sound bath</li><li>Conversation with a Buddhist monk</li><li>Buddhist philosophy</li><li>Guided labyrinth meditation</li><li>Silent lagoon boat journey</li>
         </ul>
       </div>
-      <div class="face-art reveal d1"><img src="b7.png" alt="Spiritual Sri Lanka Revealed" loading="lazy"/></div>
+      <div class="face-art reveal d1"><img src="Spiritual.jpg" alt="Spiritual Sri Lanka Revealed" loading="lazy"/></div>
     </article>
   </div>
 </section>
