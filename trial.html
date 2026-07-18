@@ -397,6 +397,29 @@ section[id]{scroll-margin-top:96px;}
 .host-ig a:hover{background:var(--deep-teal);color:#fff;transform:scale(1.08);}
 @media (max-width:820px){.host{grid-template-columns:1fr;}.host-media{min-height:340px;}}
 
+/* ============ TESTIMONIALS ============ */
+.testi{background:linear-gradient(180deg,#fff 0%, var(--cream) 100%);}
+.testi-head{text-align:center;max-width:760px;margin:0 auto clamp(2.2rem,4vw,3.2rem);}
+.testi-head .lede{margin-top:1rem;}
+.testi-row{
+  display:flex;gap:1.3rem;overflow-x:auto;padding:0.4rem 0.2rem 1.4rem;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+}
+.testi-row::-webkit-scrollbar{height:6px;}
+.testi-row::-webkit-scrollbar-track{background:transparent;}
+.testi-row::-webkit-scrollbar-thumb{background:var(--sand);border-radius:10px;}
+.testi-card{
+  flex:0 0 auto;width:clamp(220px,23vw,278px);aspect-ratio:9/16;
+  border-radius:18px;overflow:hidden;background:#000;position:relative;
+  box-shadow:0 20px 50px rgba(44,42,40,0.16);scroll-snap-align:center;
+}
+.testi-card video{width:100%;height:100%;object-fit:cover;display:block;background:#000;}
+.testi-hint{
+  text-align:center;margin-top:0.4rem;
+  font-family:var(--sans);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--rose-gold);
+}
+@media (max-width:640px){.testi-card{width:78vw;}}
+
 /* ============ FOR WHOM ============ */
 .whom{background:linear-gradient(180deg,#F6EEE6 0%, var(--cream) 100%);text-align:center;}
 .whom-grid{
@@ -715,7 +738,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
     <div class="worlds-head reveal">
       <p class="kicker" style="color:var(--soft-gold);">Your Sanctuary · Curated 5★ Hospitality</p>
       <h2 class="head">Award-Winning Hotels That <em>Define the Journey</em></h2>
-      <p class="lede">Three exceptional hotels, each revealing a different face of Sri Lanka &mdash; from jungle serenity and colonial elegance to oceanfront luxury.</p>
+      <p class="lede" style="text-align:justify;text-align-last:center;">Three exceptional hotels, each revealing a different face of Sri Lanka &mdash; from jungle serenity and colonial elegance to oceanfront luxury.</p>
     </div>
     <div class="worlds-grid">
       <div class="world-card reveal">
@@ -749,9 +772,9 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
     <div class="reveal">
       <p class="kicker">A Distinct Yoga · West Meets East</p>
       <h2 class="head">Two Perspectives. <em>One Deeper Practice.</em></h2>
-      <p class="sub-gold">Move through Yogi Nomads&rsquo; signature contemporary yoga.</p>
-      <p class="body">Discover Sri Lanka&rsquo;s living traditions through meditation, Buddhist philosophy and local teachers — yoga woven into life, not just onto the mat.</p>
-      <p class="body emph">Welcoming to every level. No experience required.</p>
+      <p class="sub-gold" style="text-align:justify;text-align-last:center;">Move through Yogi Nomads&rsquo; signature contemporary yoga.</p>
+      <p class="body" style="text-align:justify;text-align-last:center;">Discover Sri Lanka&rsquo;s living traditions through meditation, Buddhist philosophy and local teachers — yoga woven into life, not just onto the mat.</p>
+      <p class="body emph" style="text-align:justify;text-align-last:center;">Welcoming to every level. No experience required.</p>
     </div>
     <div class="yoga-strip reveal d1"><img src="IMG_0078.JPG" alt="Yoga practice on the beach" loading="lazy"/></div>
   </div>
@@ -764,8 +787,8 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
     <p class="kicker">Meet Your Host</p>
     <h2 class="head">Lina Aoun</h2>
     <p class="host-name">Founder of Yogi Nomads</p>
-    <p>Lina has hosted over 150 retreats, welcoming thousands of guests into experiences that blend yoga, travel &amp; curated community. Her approach is modern, grounded, and music-driven — designed to feel intelligent, embodied, and accessible.</p>
-    <p>Each Yogi Nomads retreat is personally led and thoughtfully crafted to feel seamless, warm, and deeply human.</p>
+    <p style="text-align:justify;">Lina has hosted over 150 retreats, welcoming thousands of guests into experiences that blend yoga, travel &amp; curated community. Her approach is modern, grounded, and music-driven — designed to feel intelligent, embodied, and accessible.</p>
+    <p style="text-align:justify;">Each Yogi Nomads retreat is personally led and thoughtfully crafted to feel seamless, warm, and deeply human.</p>
     <div class="host-stats">
       <div class="host-stat"><div class="n">8,000+</div><div class="l">Hours Teaching</div></div>
       <div class="host-stat"><div class="n">150+</div><div class="l">Retreats Hosted</div></div>
@@ -779,6 +802,27 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="testi section-pad" id="testimonials">
+  <div class="wrap">
+    <div class="testi-head reveal">
+      <p class="kicker">Our Community</p>
+      <h2 class="head">In Their <em>Words</em></h2>
+      <p class="lede">Authentic stories from guests who have travelled with Yogi Nomads.</p>
+    </div>
+    <div class="testi-row reveal d1">
+      <div class="testi-card"><video controls loop playsinline preload="metadata" poster="IMG_8075.webp"><source src="1220.mp4" type="video/mp4"></video></div>
+      <div class="testi-card"><video controls loop playsinline preload="metadata" poster="IMG_8163.PNG"><source src="2.mp4" type="video/mp4"></video></div>
+      <div class="testi-card"><video controls loop playsinline preload="metadata" poster="raw-poster.jpg"><source src="Raw.mp4" type="video/mp4"></video></div>
+      <div class="testi-card"><video controls loop playsinline preload="metadata" poster="IMG_8076.webp"><source src="4.mp4" type="video/mp4"></video></div>
+      <div class="testi-card"><video controls loop playsinline preload="metadata" poster="IMG_8079.webp"><source src="1.mp4" type="video/mp4"></video></div>
+      <div class="testi-card"><video controls loop playsinline preload="metadata" poster="IMG_8078.webp"><source src="5.MP4" type="video/mp4"></video></div>
+      <div class="testi-card"><video controls loop playsinline preload="metadata" poster="experience-poster.jpg"><source src="Experience.mp4" type="video/mp4"></video></div>
+    </div>
+    <p class="testi-hint reveal">← Swipe to see more stories →</p>
+  </div>
+</section>
+
 <!-- FOR WHOM -->
 <section class="whom section-pad">
   <div class="wrap">
@@ -786,7 +830,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
       <p class="kicker">Who This</p>
       <h2 class="head">Journey Is <em>For</em></h2>
       <div class="rule"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
-      <p class="lede" style="max-width:760px;margin:0 auto;">Thoughtfully designed from beginning to end — every destination, stay and experience chosen with purpose. The result feels warm, personal and unlike any other.</p>
+      <p class="lede" style="max-width:760px;margin:0 auto;text-align:justify;text-align-last:center;">Thoughtfully designed from beginning to end — every destination, stay and experience chosen with purpose. The result feels warm, personal and unlike any other.</p>
     </div>
     <div class="whom-grid">
       <div class="whom-card reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20a8 8 0 0 1 16 0"/><path d="M12 4v3M6 7l2 2M18 7l-2 2"/></svg><p>You want to experience the real Sri Lanka &mdash; beautifully, not hurriedly.</p></div>
@@ -877,7 +921,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
   <div class="wrap reveal">
     <p class="kicker" style="color:var(--soft-gold);">Make It Yours</p>
     <h2 class="head">Personalize Your <em>Retreat</em></h2>
-    <p>Every guest can tailor their journey before arrival — from wellness treatments and Ayurvedic rituals to ocean adventures, safaris and accommodation upgrades. Select the experiences that suit you best.</p>
+    <p style="text-align:justify;text-align-last:center;">Every guest can tailor their journey before arrival — from wellness treatments and Ayurvedic rituals to ocean adventures, safaris and accommodation upgrades. Select the experiences that suit you best.</p>
     <div class="pers-tags">
       <span>Single Occupancy</span><span>Ayurvedic Spa Rituals</span><span>Surf the Indian Ocean</span><span>Whale Watching</span><span>Yala Safari</span><span>Sunrise Sigiriya</span><span>Private Yoga</span>
     </div>
