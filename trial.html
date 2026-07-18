@@ -103,6 +103,8 @@ body{
   letter-spacing:0.06em;
 }
 .announce b{color:var(--soft-gold);font-style:normal;font-weight:600;}
+.announce a{color:var(--soft-gold);text-decoration:underline;text-underline-offset:2px;cursor:pointer;transition:opacity .3s ease;}
+.announce a:hover{opacity:0.82;}
 @keyframes shimmer{0%{background-position:-200% center;}100%{background-position:200% center;}}
 
 nav{
@@ -522,7 +524,11 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
   .announce{font-size:0.82rem;letter-spacing:0.03em;padding:0.55rem 0.9rem;line-height:1.4;}
   nav{top:2.9rem;padding-left:1.1rem;padding-right:1.1rem;}
   .nav-logo img{height:38px;}
-  .hero-eyebrow{letter-spacing:0.32em;}
+  /* Hero: keep eyebrow + title each on a single line on phones */
+  .hero-eyebrow{white-space:nowrap;font-size:2.7vw;letter-spacing:0.12em;margin-bottom:1.1rem;}
+  .hero-title{white-space:nowrap;font-size:8vw;}
+  .hero-title .rev{display:inline;}
+  .scroll-cue{display:none;}
   .hero-meta{gap:0.5rem;flex-direction:column;}
   .hero-meta span + span::before{display:none;}
   .promise-track span{font-size:1.1rem;}
@@ -535,7 +541,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
 <body>
 
 <!-- Announcement -->
-<div class="announce">Complete full payment upon booking &amp; <b>unlock the Exclusive Privileges</b></div>
+<div class="announce">Complete full payment upon booking &amp; <a href="#pricing"><b>unlock the Exclusive Privileges</b></a></div>
 
 <!-- Nav -->
 <nav id="nav">
@@ -568,7 +574,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
   <div class="hero-veil"></div>
   <div class="hero-inner">
     <p class="hero-eyebrow">A Curated Wellness &amp; Cultural Immersion</p>
-    <h1 class="hero-title">Sri Lanka<span class="rev">Revealed</span></h1>
+    <h1 class="hero-title">Sri Lanka <span class="rev">Revealed</span></h1>
     <div class="hero-meta">
       <span>Luxury Yoga Retreat</span>
       <span>Nov 26 &ndash; Dec 3, 2026</span>
