@@ -480,9 +480,13 @@ section[id]{scroll-margin-top:96px;}
 @media (max-width:640px){.testi-card{width:78vw;}}
 
 /* ============ FOR WHOM ============ */
-.whom{position:relative;background:#F6EEE6 url('group.jpeg') center/cover no-repeat;text-align:center;}
-.whom::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(253,248,243,0.9) 0%, rgba(248,240,228,0.86) 100%);z-index:0;}
+.whom{position:relative;background:var(--deep-teal) url('group.jpeg') center/cover no-repeat;text-align:center;color:#fff;}
+/* same green hue as the "This is Sri Lanka, Revealed" section */
+.whom::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,95,94,0.72),rgba(0,0,0,0.55));z-index:0;}
 .whom > .wrap{position:relative;z-index:1;}
+.whom .head{color:#fff;}
+.whom .head em{color:var(--soft-gold);}
+.whom .kicker{color:var(--soft-gold);}
 .whom-grid{
   display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:clamp(2.2rem,4vw,3.4rem);text-align:left;
 }
