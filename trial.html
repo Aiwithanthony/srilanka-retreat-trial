@@ -572,7 +572,12 @@ section[id]{scroll-margin-top:96px;}
 
 /* ============ FINAL CTA ============ */
 .final{position:relative;overflow:hidden;text-align:center;color:#fff;padding:clamp(5rem,12vw,10rem) 0;}
-.final::before{content:'';position:absolute;inset:0;background:url('final.jpeg') center/cover no-repeat;}
+/* anchor to the top so the group's heads are never cropped */
+.final::before{content:'';position:absolute;inset:0;background:url('final.jpeg') center top/cover no-repeat;}
+/* taller on desktop so more of the photo shows */
+@media (min-width:781px){
+  .final{padding:clamp(9rem,18vw,16rem) 0;}
+}
 .final::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,95,94,0.72),rgba(0,0,0,0.55));}
 .final .wrap{position:relative;z-index:2;}
 .final .head{color:#fff;font-size:clamp(2.2rem,5.5vw,3.8rem);}
