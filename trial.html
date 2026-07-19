@@ -378,6 +378,55 @@ section[id]{scroll-margin-top:96px;}
 .yoga-strip{margin-top:clamp(2.5rem,5vw,4rem);border-radius:18px;overflow:hidden;box-shadow:0 30px 70px rgba(44,42,40,0.16);}
 .yoga-strip img{width:100%;max-height:460px;object-fit:cover;}
 
+/* ---- Two Perspectives: two-column layout ---- */
+.yn2-lede{
+  font-family:var(--sans);font-size:1.25rem;font-weight:300;color:#2f2f2b;
+  max-width:640px;margin:0 auto;line-height:1.7;
+}
+.yn2-cols{
+  display:grid;grid-template-columns:1fr 1px 1fr;
+  gap:0 clamp(24px,5vw,56px);
+  margin-top:clamp(2.5rem,5vw,3.6rem);align-items:start;
+}
+.yn2-divider{background:var(--sand);position:relative;}
+.yn2-diamond{width:9px;height:9px;background:var(--soft-gold);transform:rotate(45deg);}
+.yn2-divider .yn2-diamond{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);}
+.yn2-col{text-align:center;}
+.yn2-icon{display:block;height:40px;margin:0 auto 18px;color:var(--soft-gold);}
+.yn2-icon svg{height:40px;width:auto;}
+.yn2-kicker{
+  font-family:var(--sans);color:var(--warm-taupe);letter-spacing:0.22em;
+  font-size:0.72rem;font-weight:600;text-transform:uppercase;
+}
+.yn2-h{
+  font-family:var(--serif);color:var(--deep-teal);font-weight:500;letter-spacing:0.04em;
+  font-size:clamp(1.6rem,3.4vw,2.1rem);margin:0.4rem 0 0;
+}
+.yn2-h::after{content:"";display:block;width:46px;height:2px;background:var(--soft-gold);margin:12px auto 0;}
+.yn2-desc{
+  font-family:var(--sans);font-size:1rem;font-weight:300;color:var(--warm-taupe);
+  line-height:1.7;max-width:300px;margin:14px auto 0;
+}
+.yn2-photo{
+  margin-top:28px;aspect-ratio:1/1.06;border-radius:14px;overflow:hidden;background:var(--sand);
+  box-shadow:0 20px 50px rgba(44,42,40,0.14);
+}
+.yn2-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s ease;}
+.yn2-photo:hover img{transform:scale(1.05);}
+.yn2-caption{margin-top:20px;font-family:var(--sans);font-size:0.95rem;color:var(--deep-teal);}
+.yn2-caption b{display:block;font-weight:600;margin-bottom:2px;}
+.yn2-foot{max-width:760px;margin:clamp(3rem,6vw,4rem) auto 0;text-align:center;}
+.yn2-foot-rule{height:1px;max-width:320px;margin:0 auto 2rem;background:var(--soft-gold);opacity:0.5;}
+.yn2-leaf{display:block;margin:0 auto 14px;height:34px;color:var(--soft-gold);}
+.yn2-leaf svg{height:34px;}
+.yn2-foot-h{font-family:var(--serif);color:var(--deep-teal);font-weight:500;font-size:1.9rem;margin:0 0 6px;}
+.yn2-foot-sub{font-family:var(--sans);color:var(--warm-taupe);letter-spacing:0.26em;font-size:0.78rem;text-transform:uppercase;}
+@media (max-width:720px){
+  .yn2-cols{grid-template-columns:1fr;gap:48px;}
+  .yn2-divider{display:none;}
+  .yn2-lede{font-size:1.15rem;}
+}
+
 /* ============ HOST ============ */
 .host{display:grid;grid-template-columns:1fr 1fr;background:var(--cream);}
 .host-media{position:relative;overflow:hidden;min-height:520px;}
@@ -1618,14 +1667,65 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
 <!-- DISTINCT YOGA -->
 <section class="yoga section-pad">
   <div class="wrap">
-    <div class="reveal">
+    <div class="reveal center">
       <p class="kicker">A Distinct Yoga · West Meets East</p>
       <h2 class="head">Two Perspectives. <em>One Deeper Practice.</em></h2>
-      <p class="sub-gold" style="text-align:justify;text-align-last:center;">Move through Yogi Nomads&rsquo; signature contemporary yoga.</p>
-      <p class="body" style="text-align:justify;text-align-last:center;">Discover Sri Lanka&rsquo;s living traditions through meditation, Buddhist philosophy and local teachers — yoga woven into life, not just onto the mat.</p>
-      <p class="body emph" style="text-align:justify;text-align-last:center;">Welcoming to every level. No experience required.</p>
+      <div class="rule"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+      <p class="yn2-lede">We bring together contemporary yoga with Lina and the wisdom of Sri Lankan traditions to offer you a truly complete experience.</p>
     </div>
-    <div class="yoga-strip reveal d1"><img src="IMG_0078.JPG" alt="Yoga practice on the beach" loading="lazy"/></div>
+
+    <div class="yn2-cols">
+      <!-- LEFT -->
+      <div class="yn2-col reveal">
+        <span class="yn2-icon" aria-hidden="true">
+          <svg viewBox="0 0 60 34" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M30 6c-3 6-3 14 0 22 3-8 3-16 0-22z"/>
+            <path d="M30 28c-4-5-6-11-14-15 1 8 6 13 14 15z"/>
+            <path d="M30 28c4-5 6-11 14-15-1 8-6 13-14 15z"/>
+            <path d="M30 28c-6-2-12-3-20-1 4 6 12 6 20 1z"/>
+            <path d="M30 28c6-2 12-3 20-1-4 6-12 6-20 1z"/>
+          </svg>
+        </span>
+        <p class="yn2-kicker">Contemporary Yoga</p>
+        <h3 class="yn2-h">With Lina</h3>
+        <p class="yn2-desc">Dynamic, intelligent and creative classes inspired by Yogi Nomads&rsquo; signature contemporary yoga.</p>
+        <div class="yn2-photo"><img src="IMG_0078.JPG" alt="Contemporary yoga on the beach" loading="lazy"/></div>
+        <p class="yn2-caption"><b>Move. Breathe. Connect.</b>Yoga that meets you where you are.</p>
+      </div>
+
+      <div class="yn2-divider"><span class="yn2-diamond"></span></div>
+
+      <!-- RIGHT -->
+      <div class="yn2-col reveal d1">
+        <span class="yn2-icon" aria-hidden="true">
+          <svg viewBox="0 0 60 34" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+            <path d="M14 30a16 16 0 0 1 32 0"/>
+            <line x1="30" y1="4" x2="30" y2="12"/>
+            <line x1="14" y1="9"  x2="18" y2="15"/>
+            <line x1="46" y1="9"  x2="42" y2="15"/>
+            <line x1="6"  y1="20" x2="13" y2="23"/>
+            <line x1="54" y1="20" x2="47" y2="23"/>
+          </svg>
+        </span>
+        <p class="yn2-kicker">Traditional Wisdom</p>
+        <h3 class="yn2-h">With Local Teachers</h3>
+        <p class="yn2-desc">Meditation, Buddhist philosophy and traditional practices shared by local Sri Lankan teachers.</p>
+        <div class="yn2-photo"><img src="IMG_4104.jpeg" alt="Meditation with a local Sri Lankan teacher" loading="lazy"/></div>
+        <p class="yn2-caption"><b>Discover. Learn. Experience.</b>Ancient wisdom for modern life.</p>
+      </div>
+    </div>
+
+    <div class="yn2-foot reveal">
+      <div class="yn2-foot-rule"></div>
+      <span class="yn2-leaf" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 34C8 20 18 10 32 8 30 22 20 32 8 34z"/>
+          <line x1="8" y1="34" x2="24" y2="18"/>
+        </svg>
+      </span>
+      <h4 class="yn2-foot-h">Welcoming to every level.</h4>
+      <small class="yn2-foot-sub">No experience required.</small>
+    </div>
   </div>
 </section>
 
