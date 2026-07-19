@@ -385,7 +385,7 @@ section[id]{scroll-margin-top:96px;}
 
 /* ---- Two Perspectives: two-column layout ---- */
 .yn2-lede{
-  font-family:var(--sans);font-size:1.25rem;font-weight:300;color:#2f2f2b;
+  font-family:var(--sans);font-size:1.125rem;font-weight:300;color:#2f2f2b;
   max-width:640px;margin:0 auto;line-height:1.7;
 }
 .yn2-cols{
@@ -429,7 +429,7 @@ section[id]{scroll-margin-top:96px;}
 @media (max-width:720px){
   .yn2-cols{grid-template-columns:1fr;gap:48px;}
   .yn2-divider{display:none;}
-  .yn2-lede{font-size:1.15rem;}
+  .yn2-lede{font-size:1.035rem;}
 }
 
 /* ============ HOST ============ */
@@ -453,7 +453,9 @@ section[id]{scroll-margin-top:96px;}
 @media (max-width:820px){.host{grid-template-columns:1fr;}.host-media{min-height:340px;}}
 
 /* ============ TESTIMONIALS ============ */
-.testi{background:linear-gradient(180deg,#fff 0%, var(--cream) 100%);}
+.testi{position:relative;background:var(--cream) url('182924.jpg') center/cover no-repeat;}
+.testi::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(253,248,243,0.9) 0%, rgba(248,240,228,0.86) 100%);z-index:0;}
+.testi > .wrap{position:relative;z-index:1;}
 .testi-head{text-align:center;max-width:760px;margin:0 auto clamp(2.2rem,4vw,3.2rem);}
 .testi-head .lede{margin-top:1rem;}
 .testi-row{
@@ -1653,7 +1655,7 @@ footer{background:#14504F;color:rgba(253,248,243,0.72);padding:3rem 1.5rem 2.4re
         <img src="AnantaraPeaceHaven.jpeg" alt="Anantara Peace Haven" loading="lazy"/>
         <div class="world-overlay">
           <div class="world-name">Anantara Peace Haven</div>
-          <div class="world-award">Sri Lanka&rsquo;s Leading Luxury — World Travel Awards</div>
+          <div class="world-award">Sri Lanka&rsquo;s Leading Luxury, World Travel Awards</div>
         </div>
       </div>
       <div class="world-card reveal d1">
