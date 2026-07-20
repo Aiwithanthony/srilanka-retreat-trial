@@ -491,13 +491,16 @@ section[id]{scroll-margin-top:96px;}
   display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:clamp(2.2rem,4vw,3.4rem);text-align:left;
 }
 .whom-card{
-  background:#fff;border-radius:14px;padding:1.9rem 1.6rem;
-  box-shadow:0 8px 30px rgba(44,42,40,0.06);border:1px solid rgba(139,125,116,0.08);
-  transition:transform .4s ease, box-shadow .4s ease;
+  /* translucent so the group photo shows through */
+  background:rgba(255,255,255,0.82);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  border-radius:14px;padding:1.3rem 1.1rem;
+  box-shadow:0 8px 26px rgba(0,0,0,0.16);border:1px solid rgba(255,255,255,0.35);
+  transition:transform .4s ease, box-shadow .4s ease, background .4s ease;
 }
-.whom-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(44,42,40,0.1);}
-.whom-card .ic{width:34px;height:34px;color:var(--deep-teal);margin-bottom:1rem;}
-.whom-card p{font-family:var(--sans);font-size:0.95rem;font-weight:300;color:var(--warm-taupe);line-height:1.7;}
+.whom-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,0.22);background:rgba(255,255,255,0.9);}
+.whom-card .ic{width:30px;height:30px;color:var(--deep-teal);margin:0 auto 0.75rem;display:block;}
+.whom-card p{font-family:var(--sans);font-size:0.9rem;font-weight:300;color:var(--warm-taupe);line-height:1.65;}
 @media (max-width:820px){.whom-grid{grid-template-columns:1fr;}}
 
 /* ============ INCLUSIONS ============ */
