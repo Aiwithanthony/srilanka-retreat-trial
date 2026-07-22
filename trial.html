@@ -2486,47 +2486,49 @@ toTop.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
         if (bookingForm) {
             bookingForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                
+
                 const submitBtn = document.getElementById('form-submit-btn');
-                const originalText = submitBtn.textContent;
-                
+
                 // Disable button and show loading
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Submitting...';
-                
+
                 // Create form data
                 const formData = new FormData(bookingForm);
-                
-                // Submit to Formspree
+
+                // Build a WhatsApp summary of the booking (incl. which pay button was pressed)
+                const g = n => (formData.get(n) || '').toString().trim();
+                const waMsg = [
+                    "Hello Yogi Nomads! I'd like to book the Sri Lanka Luxury Yoga Retreat.",
+                    "",
+                    "Payment option: " + (g('Payment Type') || '—'),
+                    "",
+                    "Name: " + (g('First Name') + " " + g('Last Name')).trim(),
+                    "Email: " + g('Email'),
+                    "Phone: " + g('Phone Number'),
+                    "Age: " + g('Age'),
+                    "Located: " + g('Where are you located?'),
+                    "Social: " + g('What is YOUR social media handle?'),
+                    "",
+                    "Deposit non-refundable: " + g('I understand that my deposit and any additional payments towards the retreat are non-refundable'),
+                    "Full payment 40 days before: " + g('I understand that the full price must be paid 40 days BEFORE the retreat begins')
+                ].join('\n');
+                const waUrl = 'https://wa.me/9613543547?text=' + encodeURIComponent(waMsg);
+
+                const goToWhatsApp = () => {
+                    submitBtn.textContent = 'Opening WhatsApp…';
+                    setTimeout(() => { window.location.href = waUrl; }, 400);
+                };
+
+                // Record the booking in Formspree, then hand off to WhatsApp.
+                // Proceed to WhatsApp regardless of Formspree result so no booking is lost.
                 fetch('https://formspree.io/f/mqerdbng', {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 })
-                .then(response => {
-                    if (response.ok) {
-                        // Success - redirect to checkout
-                        submitBtn.textContent = 'Redirecting...';
-                        setTimeout(() => {
-                            window.location.href = checkoutUrl;
-                        }, 500);
-                    } else {
-                        // Error
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = originalText;
-                        alert('There was an error submitting your form. Please try again.');
-                    }
-                })
-                .catch(error => {
-                    // Network error - still redirect (form might have been submitted)
-                    console.error('Error:', error);
-                    submitBtn.textContent = 'Redirecting...';
-                    setTimeout(() => {
-                        window.location.href = checkoutUrl;
-                    }, 500);
-                });
+                .then(goToWhatsApp)
+                .catch(function(error){ console.error('Formspree error:', error); goToWhatsApp(); });
             });
         }
 
